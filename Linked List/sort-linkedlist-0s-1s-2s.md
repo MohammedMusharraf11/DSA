@@ -46,4 +46,39 @@ return head;
 ## Optimized Solution:
 ![alt text](image-2.png)
 ![alt text](image-3.png)
+```
+temp = head;
+if(head==NULL || temp->next==NULL){
+    retrun head;
+}
+zeroHead = new Node(-1)
+oneHead = new Node(-1)
+twoHead = new Node(-1)
 
+zero = zeroHead;
+one = oneHead;
+two = twoHead;
+
+while(temp!=NULL){
+    if(temp->data==0){
+        zero->next = temp;
+        zero = zero->next;
+    }
+    else if(temp->data==1){
+        one->next = temp;
+        one = one->next;
+    }
+    else(temp->data==2){
+        two->next = temp;
+        two = two->next;
+    }
+    temp = temp->next;
+}
+
+zero->next = (oneHead->next) ? oneHead->next:twoHead->next;
+one->next = twoHead->next;
+twoHead->next = NULL;
+
+Node *newHead = zeroHead->next;
+
+return newHead;
