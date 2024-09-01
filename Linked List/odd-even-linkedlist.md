@@ -10,7 +10,7 @@ Take a temp and start iterating odd indexes and take the data and store it in a 
 Now just iterate the given linked list and replace the data with that of the values stored in that of an array 
 
 ### Code
-
+```
 temp = head
 arr[];
 
@@ -49,3 +49,4 @@ while(temp!=NULL){
 }
 
 return head;
+```
