@@ -62,7 +62,7 @@ Node* delknode(Node* head, int k) {
 
 ## Optimized Solution:
 
-`Suppose K =2 ;
+```Suppose K =2 ;
 fast = head;
 for(int i =0 ;i<k;i++){
     fast = fast->next;
@@ -83,5 +83,5 @@ slow->next = delNode->next;
 free(delNode);
 
 return head;
-}`
+}```
 
