@@ -83,5 +83,5 @@ slow->next = delNode->next;
 free(delNode);
 
 return head;
-}```
+```
 
