@@ -63,25 +63,28 @@ Node* delknode(Node* head, int k) {
 ## Optimized Solution:
 
 ```Suppose K =2 ;
-fast = head;
-for(int i =0 ;i<k;i++){
-    fast = fast->next;
-}
-
-slow = head;
-
-while(fast->next!=NULL){
-    slow = slow->next;
-    fast = fast->next;
-}
-if(fast==NULL){
-    head = head->next;
-    return head;
-}
-delNode = slow->next;
-slow->next = delNode->next;
-free(delNode);
-
-return head;
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+        if(head==NULL || head->next==NULL){
+            return NULL;
+        }
+        ListNode * fast = head;
+        ListNode * slow = head;
+        for(int i =0;i<n;i++){
+            fast = fast->next;
+        }
+        if(fast==nullptr){
+            return head->next;
+        }
+        while(fast->next!=nullptr){
+            slow = slow->next;
+            fast = fast->next;
+        }
+        
+        ListNode * delNode = slow->next;
+        slow->next = delNode->next;
+        delete delNode;
+        return head;
+        
+    }
 ```
 
